@@ -1,4 +1,5 @@
 # MagicalToken
 手品用のトークンです
+This token is for magic trick in Japan.
 
-https://blockscout.com/poa/xdai/tokens/0x7b2dB309b2662036853889f4EdeF22cE8E739fA3/token-transfers
+https://etherscan.io/token/0x0bfef61d1dc34b115ea8b8a616370bddb4457d39
