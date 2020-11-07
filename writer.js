@@ -17,7 +17,7 @@ function myButtonClicked() {
 
 	web3js.eth.getAccounts().then((resolve) => {
 		//上記はコントラクトへトランザクションを送るための定型文(Metamaskが重いのでthenでの処理待ちが必須)
-		mycontract.methods.setnumber(document.getElementById('id100').value).send({ from: resolve[0] });
+		mycontract.methods.fingerClick().send({ from: resolve[0] });
 		console.log("resolve[0]_is_your_Address:" + resolve[0]);
 	});
 }
