@@ -331,11 +331,11 @@ window.onload = function () {
   console.log("reader.js_is_checking_web3.js_version..." + Web3.version);
 
 
-  mycontract.methods.get3().call().then((fromblockchain1) => {
+  mycontract.methods.name().call().then((fromblockchain1) => {
     //上記はコントラクト上のget3関数を呼び出すための定型句です。呼び出し結果は「fromblockchain1」で利用可
     document.getElementById("id3").innerHTML = fromblockchain1;
   });
-  mycontract.methods.getnumber().call().then((fromblockchain2) => {
+  mycontract.methods.symbol().call().then((fromblockchain2) => {
     //上記はコントラクト上のgetnumber関数を呼び出すための定型句です。呼び出し結果は「fromblockchain2」で利用可
     document.getElementById("idn").innerHTML = fromblockchain2;
   });
