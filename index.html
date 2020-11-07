@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>very simple DApps</title>
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.2.7/dist/web3.min.js" integrity="sha256-9rSwSMn4GDjf9FcHmJSvdiKGrk+mNIUmM4ltFDu3MUU=" crossorigin="anonymous"></script>
+    <script src="./reader.js"></script>
+    <script src="./writer.js"></script>
+</head>
+
+<body>
+    <h1>Magical Token</h1>
+    <div>↓ブロックチェーンから取得した関数の結果</div>
+    <p id="id3">トラブルが起きています</p>
+    <div>↓ブロックチェーンから取得したgetnumber関数の結果</div>
+    <p id="idn">トラブルが起きています</p>
+    <br><br>
+    <p>setnumber関数の呼び出し(ガス代がかかります)</p>
+    <input type="number" name="toBlockChain" id="id100"><input type="button" value="トランザクション送信"
+        onclick="myButtonClicked()">
+
+</body>
+
+</html>
