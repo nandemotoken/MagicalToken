@@ -320,7 +320,7 @@ ethereum.enable();
 //--------------ここからメイン処理---------------
 //------web3.jsの読み込み待ちのため、window.onloadにメイン処理を入れる--------
 
-window.onload = function () {
+window.onload = async function () {
 
   //metamaskの準備
   web3js = new Web3(web3.currentProvider);
@@ -331,12 +331,9 @@ window.onload = function () {
   console.log("reader.js_is_checking_web3.js_version..." + Web3.version);
 
 
-  mycontract.methods.name().call().then((fromblockchain1) => {
-    //上記はコントラクト上のget3関数を呼び出すための定型句です。呼び出し結果は「fromblockchain1」で利用可
-    document.getElementById("id3").innerHTML = fromblockchain1;
-  });
-  mycontract.methods.symbol().call().then((fromblockchain2) => {
-    //上記はコントラクト上のgetnumber関数を呼び出すための定型句です。呼び出し結果は「fromblockchain2」で利用可
-    document.getElementById("idn").innerHTML = fromblockchain2;
-  });
+  let fromblockchain1 = await mycontract.methods.name().call();
+  document.getElementById("id3").innerHTML = fromblockchain1;
+  
+  let fromblockchain2 = await mycontract.methods.symbol().call();
+  document.getElementById("idn").innerHTML = fromblockchain2;
 }
