@@ -1,7 +1,7 @@
 //--------------ここからメイン処理---------------
 //------writerはボタンが押されたときに動くようにするので、ボタンと関連させる関数を作ってメイン処理を入れる--------
 
-function async myButtonClicked() {
+async function myButtonClicked() {
 
 	//metamaskの準備
 	web3js = new Web3(web3.currentProvider);
