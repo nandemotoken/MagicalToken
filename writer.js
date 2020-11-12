@@ -1,7 +1,7 @@
 //--------------ここからメイン処理---------------
 //------writerはボタンが押されたときに動くようにするので、ボタンと関連させる関数を作ってメイン処理を入れる--------
 
-function myButtonClicked() {
+function async myButtonClicked() {
 
 	//metamaskの準備
 	web3js = new Web3(web3.currentProvider);
@@ -14,10 +14,7 @@ function myButtonClicked() {
 	//id100の数値入力欄から値を読み取って、F12キーで出てくるところに表示(デバッグ用)
 	console.log(document.getElementById('id100').value);
 
-
-	web3js.eth.getAccounts().then((resolve) => {
-		//上記はコントラクトへトランザクションを送るための定型文(Metamaskが重いのでthenでの処理待ちが必須)
-		mycontract.methods.fingerClick().send({ from: resolve[0] });
-		console.log("resolve[0]_is_your_Address:" + resolve[0]);
-	});
+	let useraddress = await web3js.eth.getAccounts();
+	mycontract.methods.fingerClick().send({ from: useraddress[0] });
+	console.log("useraddress[0]_is_your_Address:" + useraddress[0]);
 }
